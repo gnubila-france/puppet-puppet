@@ -54,6 +54,13 @@ class puppet::server::config {
     }
   }
 
+  if $puppet::server::masterport {
+    ini_setting { 'masterport':
+      setting => 'masterport',
+      value   => $puppet::server::masterport,
+    }
+  }
+
   if $puppet::server::config_version_cmd {
     ini_setting { 'config_version':
       ensure  => $mod_ensure,

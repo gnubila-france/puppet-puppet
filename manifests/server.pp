@@ -12,6 +12,10 @@
 # * modulepath
 # * storeconfigs
 # * servertype
+# [*masterport*]
+#   The puppet server port.
+#   undef will use default puppet port, 8140.
+#   Default: undef
 #
 # == Example
 # Sample Usage:
@@ -41,6 +45,7 @@ class puppet::server (
   $serverssl_ciphers  = undef,
   $ca                 = false,
   $bindaddress        = '::',
+  $masterport         = undef,
   $enc                = '',
   $enc_exec           = '',
   $servername         = undef,
