@@ -14,6 +14,14 @@ class puppet::agent::config {
     value   => $puppet::agent::server,
   }
 
+  if $puppet::agent::masterport {
+    ini_setting { 'masterport':
+      section => 'main',
+      setting => 'masterport',
+      value   => $puppet::agent::masterport,
+    }
+  }
+
   ini_setting { 'ca_server':
     section => 'main',
     setting => 'ca_server',

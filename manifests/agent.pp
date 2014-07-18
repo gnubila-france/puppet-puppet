@@ -6,6 +6,10 @@
 #
 # [*server*]
 #   The puppet server to use for fetching catalogs. Required.
+# [*masterport*]
+#   The puppet server port.
+#   undef will use default puppet port, 8140.
+#   Default: undef
 # [*ca_server*]
 #   The puppet server to use for certificate requests and similar actions.
 #   Default: puppet::agent::server
@@ -34,6 +38,7 @@
 class puppet::agent(
   $ensure            = 'present',
   $server            = 'puppet',
+  $masterport        = undef,
   $ca_server         = undef,
   $report            = true,
   $report_server     = undef,
